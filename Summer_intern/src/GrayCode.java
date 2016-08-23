@@ -3,6 +3,9 @@ import java.util.*;
  * @author zts  E-mail: 15527174455@163.com
  * @version 创建时间：2016年3月28日 上午10:27:45 
  * 类说明 
+ * >>是带符号右移，负数高位补1，正数补0
+ *<<左移不管负数还是正数，在低位永远补0
+ *>>>是不带符号右移，不论负数还是正数，高位补0
  */
 public class GrayCode {
 	
@@ -18,9 +21,9 @@ public class GrayCode {
 	        codes[0] = "0";  
 	        codes[1] = "1";  
 	    }else{  
-	        createGrayCode(codes, n - 1);  
-	        int len = 2 << (n - 1);  
-	        int half = len >> 1;  
+	        createGrayCode(codes, n - 1);  //对于格雷码，可以看做是对前面的码添加0 或者1；
+	        int len = 2 << (n - 1);  //格雷码的长度
+	        int half = len >> 1;  //前面的一半添加0，后面的一半添加1
 	        for(int i = len - 1,j = 0; i >= 0; i--){  
 	            if(i < half){  
 	                codes[i] = "0" + codes[--j];  

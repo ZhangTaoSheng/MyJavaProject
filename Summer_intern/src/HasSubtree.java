@@ -2,6 +2,7 @@
  * @author zts  E-mail: 15527174455@163.com
  * @version 创建时间：2016年3月18日 下午6:56:41 
  * 类说明 
+ * 判断一棵树是否为另一颗树的子树
  */
 public class HasSubtree {
 	class TreeNode{
