@@ -13,7 +13,7 @@ public class GetKMin {
 	}
 	public void quickSort(int a[],int start,int end,int target){
 		if(start<end){
-			int Mid = getMid(a,start,end);
+			int Mid = getMid(a,start,end);//快排获取当前值在整个数组中的位置
 			System.out.println("当前序号："+(Mid+1));
 			print(a);
 			if(Mid+1<target){
@@ -29,7 +29,7 @@ public class GetKMin {
 	public int getMid(int a[],int left,int right){
 		int temp = a[left];
 		while(left<right){
-			while(left<right&&temp<=a[right]){
+			while(left<right&&temp<=a[right]){//千万不能忘了等于
 				right--;				
 			}
 			a[left] = a[right];//比目标值小的，放在上次左指针指向的位置
