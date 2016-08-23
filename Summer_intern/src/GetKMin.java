@@ -2,6 +2,7 @@
  * @author zts  E-mail: 15527174455@163.com
  * @version 创建时间：2016年3月6日 下午8:54:55 
  * 类说明 
+ * 获取数组中第K大的值
  */
 public class GetKMin {
 	public int ret=Integer.MIN_VALUE;
