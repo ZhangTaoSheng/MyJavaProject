@@ -24,6 +24,7 @@ public class Addbinary_leetCode_67 {
         	startA--;
         	startB--;
         }
+        
         while(startA>=0){
         	retInt.add((aa[startA]+carry-'0')%2);
         	System.out.println(" "+(aa[startA]+carry-'0')%2);

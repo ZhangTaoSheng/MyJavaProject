@@ -4,10 +4,11 @@
  * 类说明 
  */
 public class CountAndSay_leetCode_38 {
+	
 	String countAndSayForOneString(String input) {  
         char tmp = input.charAt(0);  
         int  num = 1;  
-        StringBuffer newString = new StringBuffer("");  
+        StringBuffer newString = new StringBuffer("");  //这种类不需要每次改变一下就在内存中开辟一块空间。
         for(int k=1;k<input.length();k++) {  
             if(input.charAt(k)==tmp) {  
                 num++;  
@@ -31,6 +32,7 @@ public class CountAndSay_leetCode_38 {
         }  
         return result;  
     }  
+    
 	public static void main(String args[]){
 		CountAndSay_leetCode_38 ls = new CountAndSay_leetCode_38();
 		String ret = ls.countAndSay(25);

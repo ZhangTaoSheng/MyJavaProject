@@ -1,4 +1,3 @@
-import java.awt.List;
 import java.util.ArrayList;
 
 /** 
@@ -7,6 +6,7 @@ import java.util.ArrayList;
  * ÀàËµÃ÷ 
  */
 public class CountingBits_leetCode_338 {
+	
 	public int[] countBits(int num){
 		int []ret = new int[num+1];
 		while(num>=0){

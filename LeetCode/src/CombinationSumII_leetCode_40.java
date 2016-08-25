@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Scanner;
 
 /** 
  * @author zts  E-mail: 15527174455@163.com
@@ -18,9 +19,7 @@ public class CombinationSumII_leetCode_40 {
 	        return ret;
 	    //先排序，然后利用递归算法
 	    Arrays.sort(candidates);//先排列
-	    findSum2(candidates,target,temp,ret,0,0);//递归的初始值 ，sum = 0,start_index = 0;
-	   
-	    
+	    findSum2(candidates,target,temp,ret,0,0);//递归的初始值 ，sum = 0,start_index = 0;	   	    
 	    //去掉重复的，可以用HashSet筛选一次，然后在加入到结果集中。
 	    HashSet<List<Integer>> set = new HashSet<List<Integer>>(ret);
 	    //remove duplicate lists
@@ -40,15 +39,36 @@ public class CombinationSumII_leetCode_40 {
 			for(int i = start; i<candidates.length;i++){//从当前值开始寻找，往后可以找很多步
 				temp.add(candidates[i]);//有理无理加入去试探。
 				findSum2(candidates,target,temp,ret,sum+candidates[i],i+1);//如果当前不满足，将加入下一个
-				temp.remove(temp.size()-1);//很重要的一步，返回上一层的时候，需要剔除当前节点
+				temp.remove(temp.size()-1);//很重要的一步，返回上一层的时候，需要剔除当前节点，dfs算法需要注意的一步。
 			}
 		}
 		
 	}
-	
-	
+		
 	public static void main(String[] args) {
-
+		 CombinationSumII_leetCode_40 ls = new CombinationSumII_leetCode_40();
+		 Scanner in = new Scanner(System.in);
+		 System.out.println("请输入数组长度：");
+		 int len = in.nextInt();
+		 int [] candidates = new int [len];
+		 System.out.println("请输入数组元素：");
+		 for(int i=0;i<len ;i++)
+		 {
+			 candidates[i] = in.nextInt();
+		 }
+		 System.out.println("程序开始！");
+		 int target = 10;
+		 List<List<Integer>> ret = ls.combinationSum2(candidates, target);
+		 for(int i = 0;i<ret.size();i++)
+		 {
+			 System.out.print("第 "+i+" 个组合：");
+			 List<Integer> temp = ret.get(i);
+			 for(int j =0; j<temp.size();j++){
+				 System.out.print(temp.get(j)+" ");			 
+			 }
+			System.out.println();		 
+		 }
+		 System.out.println("程序结束！");
 	}
 
 }
