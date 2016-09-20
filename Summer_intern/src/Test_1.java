@@ -6,17 +6,17 @@ import java.util.HashMap;
  * ÀàËµÃ÷ 
  */
 public class Test_1 {
+	public static int num = 0;
+	public static int f(int n){
+		num++;
+		if(n<=3)return 1;
+		else return f(n-2)+f(n-6)+1;
+	}
 
 	public static void main(String[] args) {
-
-		Integer i1 = 124, i2 = 124, i3=129,i4=129;
-		String s1 = "hello";
-		String s2 = "hello";
-		System.out.println(s1==s2);
-		System.out.println(i1==i2);
-		System.out.println(i1.equals(i2));
-		System.out.println(i3==i4);
-		System.out.println(i3.equals(i4));
+		Test_1 t = new Test_1();
+		f(f(9));
+		System.out.println(num);
 	}
 	
 }

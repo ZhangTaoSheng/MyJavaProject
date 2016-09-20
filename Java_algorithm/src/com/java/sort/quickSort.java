@@ -16,7 +16,7 @@ public class quickSort {
             System.out.print(a[i]+" ");
         }
         //快速排序
-        quick(a);
+
         System.out.println();
         System.out.println("排序之后：");
         for (int i = 0; i < a.length; i++) {
